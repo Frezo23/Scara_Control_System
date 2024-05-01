@@ -5,6 +5,8 @@
 import time
 import tkinter as tk
 from tkinter import *
+from tkinter import ttk
+from tkinter.ttk import *
 import math
 import random
 
@@ -107,8 +109,8 @@ root.geometry('600x600')
 
 root.configure(bg='#070F2B')
 
-motors_bg = tk.Label(root,width=10,height=20, bg='#1B1A55', font=('Roboto',10))
-motors_bg.grid(row=0,column=0)
+motors_bg = tk.Label(root, bg='#1B1A55', font=('Roboto',10))
+motors_bg.place(x=0,y=0)
 
 motor_1_pos_set = tk.Label(motors_bg, text='Set [Motor 1] position:', bg='#535C91', font=('Roboto',10))
 motor_1_pos_set.grid(row=0,column=0)
@@ -143,7 +145,7 @@ motor_3_pos_set_btn.grid(row=2,column=2)
 ### Positions
 
 positions_bg = tk.Label(root,width=10,height=20, bg='#1B1A55')
-positions_bg.grid(row=0,column=1)
+positions_bg.place(x=200,y=0)
 
 motor_1_pos = tk.Label(positions_bg, text='[Motor 1] position:', bg='#535C91', font=('Roboto',10))
 motor_1_pos.grid(row=0,column=0)
@@ -164,6 +166,9 @@ motor_3_pos.grid(row=2,column=0)
 
 motor_3_pos_lbl = tk.Label(positions_bg, text=pos_3, bg='#535C91', font=('Roboto',10))
 motor_3_pos_lbl.grid(row=2,column=1)
+
+homing_btn = tk.Button(root, text='\U0001F3E0', font=('Roboto',20), bg='#FF4C29', command=Homing_Sequence)
+homing_btn.place(x=3,y=70)
 
 
 root.mainloop()
